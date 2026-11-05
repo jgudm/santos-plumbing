@@ -10,13 +10,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1600&q=70" imagesrcset="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=800&q=60 800w, https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1600&q=70 1600w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1600&q=70" imagesrcset="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=800&q=60 800w, https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1200&q=62 1200w, https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1600&q=70 1600w" imagesizes="100vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add("js")</script>
 <style>
-:root{--navy:#0f172a;--navy-2:#16233a;--blue:#0369a1;--blue-2:#075985;--sky:#38bdf8;--tint:#e8f4fb;--mist:#f8fafc;--line:#e2e8f0;--ink:#0f172a;--soft:#475569;--green:#15803d;--green-2:#166534;--white:#fff;--head:Poppins,"Segoe UI",Arial,sans-serif;--body:"Open Sans","Segoe UI",Roboto,Arial,sans-serif;--r:14px;--ease:cubic-bezier(.22,.61,.36,1);--shadow:0 18px 44px rgba(15,23,42,.1)}
+:root{interpolate-size:allow-keywords;--navy:#0f172a;--navy-2:#16233a;--blue:#0369a1;--blue-2:#075985;--sky:#38bdf8;--tint:#e8f4fb;--mist:#f8fafc;--line:#e2e8f0;--ink:#0f172a;--soft:#475569;--green:#15803d;--green-2:#166534;--white:#fff;--head:Poppins,"Segoe UI",Arial,sans-serif;--body:"Open Sans","Segoe UI",Roboto,Arial,sans-serif;--r:14px;--ease:cubic-bezier(.22,.61,.36,1);--pop:cubic-bezier(.34,1.56,.64,1);--shadow:0 18px 44px rgba(15,23,42,.1)}
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:92px}
+main{overflow-x:clip}
 body{margin:0;background:var(--white);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
 h1,h2,h3,h4,p,ul,ol,figure{margin:0;padding:0}
 ul,ol{list-style:none}
@@ -69,6 +70,7 @@ h3{font-size:1.3rem;font-weight:600}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
 .nav a:hover::after{transform:scaleX(1)}
 .head-call{display:none}
+.head-tel{display:grid;place-items:center;flex:none;width:46px;height:46px;margin-left:auto;border-radius:10px;background:var(--blue);color:var(--white)}
 .menu-btn{display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--line);border-radius:10px;background:var(--white);cursor:pointer}
 .menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s var(--ease),background-color .2s}
 .menu-btn span{position:relative}
@@ -94,6 +96,10 @@ h3{font-size:1.3rem;font-weight:600}
 .hero p{max-width:33em;margin-top:18px;color:#e2e8f0;font-size:clamp(1.07rem,2.6vw,1.22rem)}
 .hero-btns{display:grid;gap:12px;margin-top:28px}
 .hero-num{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:8px;font:600 1.08rem var(--head);text-decoration:none}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.quick a{display:grid;justify-items:center;align-content:center;gap:6px;min-height:84px;padding:10px 6px;border:1px solid rgba(148,163,184,.3);border-radius:12px;background:rgba(255,255,255,.06);font:500 .9rem/1.2 var(--head);text-align:center;text-decoration:none;transition:background-color .2s var(--ease),transform .2s var(--ease)}
+.quick a:active{transform:scale(.97);background:rgba(255,255,255,.14)}
+.quick .ico{color:var(--sky)}
 .up{animation:rise .7s var(--ease) both}
 .up.d1{animation-delay:.1s}.up.d2{animation-delay:.2s}.up.d3{animation-delay:.3s}.up.d4{animation-delay:.4s}
 @keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
@@ -139,6 +145,8 @@ h3{font-size:1.3rem;font-weight:600}
 .step{position:relative;padding:0 0 0 72px;counter-increment:s}
 .step::before{content:counter(s);position:absolute;left:0;top:0;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--blue);color:var(--white);font:700 1.2rem var(--head)}
 .step p{margin-top:6px;color:var(--soft)}
+.step::after{content:"";position:absolute;left:25px;top:60px;bottom:-20px;width:3px;border-radius:3px;background:var(--sky);transform-origin:top;transition:transform .7s var(--ease) calc(var(--d,0s) + .35s)}
+.step:last-child::after{display:none}
 
 .why{position:relative;overflow:hidden;background:var(--navy);color:var(--white)}
 .why .kicker{color:var(--sky)}
@@ -211,6 +219,8 @@ form .btn{width:100%}
 
 .bar{position:fixed;z-index:45;left:0;right:0;bottom:0;display:grid;grid-template-columns:1.25fr 1fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--white);box-shadow:0 -8px 24px rgba(15,23,42,.14);animation:barin .5s .8s var(--ease) both}
 @keyframes barin{from{transform:translateY(100%)}to{transform:none}}
+.js .bar{visibility:hidden;transform:translateY(110%);animation:none;transition:transform .3s var(--ease),visibility .3s}
+.js .bar.on{visibility:visible;transform:none}
 .bar .btn{min-height:54px;padding:0 10px;font-size:1.05rem}
 body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 
@@ -229,11 +239,32 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
 .service-grid{grid-template-columns:repeat(3,1fr)}
 .steps{grid-template-columns:repeat(3,1fr);gap:28px}
 .step{padding:72px 10px 0 0}
-.step::after{content:"";position:absolute;top:25px;left:64px;right:0;height:2px;background:var(--line)}
-.step:last-child::after{display:none}
+.step::after{top:25px;left:64px;right:0;bottom:auto;width:auto;height:3px;transform-origin:left}
 .why-grid{grid-template-columns:repeat(2,1fr)}
 }
+@media (max-width:979px){
+.head .wrap,.head.stuck .wrap{min-height:64px}
+.hero::after,.wave{display:none}
+.hero-img{position:relative;height:auto;aspect-ratio:4/3;max-height:460px;object-position:50% 50%}
+.hero-in{margin-top:-22px;padding-block:26px 28px;border-radius:22px 22px 0 0;background:var(--navy)}
+.hero h1{max-width:none;font-size:clamp(2.2rem,9.6vw,3.4rem)}
+.hero p{margin-top:12px;font-size:1.0625rem;line-height:1.55}
+.hero-btns{margin-top:20px;gap:10px}
+.btn-big{min-height:60px}
+.hero-num{margin-top:6px}
+.trust{margin-top:0;padding-top:28px}
+.trust ul{gap:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--r)}
+.trust li{padding:14px 16px;border-radius:0;box-shadow:none}
+.trust li+li{border-top:1px solid var(--line)}
+}
+@media (max-width:599px){
+.hero-num{display:flex;justify-content:center}
+}
+@media (min-width:760px) and (max-width:979px){
+.trust li+li{border-top:0;border-left:1px solid var(--line)}
+}
 @media (min-width:980px){
+.quick,.head-tel{display:none}
 .wrap{padding-inline:32px}
 .top .wrap{display:flex}
 .nav,.head-call{display:flex}
@@ -250,6 +281,65 @@ body{padding-bottom:0}
 .area-grid{grid-template-columns:5fr 7fr;gap:48px}
 .contact-grid{grid-template-columns:5fr 7fr;align-items:stretch}
 .foot-grid{grid-template-columns:2fr 1fr 1fr}
+}
+.prog{position:absolute;left:0;right:0;bottom:-3px;height:3px;background:linear-gradient(90deg,var(--blue),var(--sky));transform:scaleX(0);transform-origin:left}
+.js .reveal.done{transition-duration:.3s;transition-delay:0s}
+.sec-head::after{content:"";display:block;width:56px;height:3px;margin:16px auto 0;border-radius:3px;background:var(--sky);transition:transform .7s var(--ease) .3s}
+.s-img,.about-pic img{transition:clip-path .9s var(--ease) var(--d,0s)}
+.s-img img{transition:transform .9s var(--ease)}
+.work img{transition:transform .9s var(--ease),clip-path .9s var(--ease) var(--d,0s)}
+.badge,.step::before{transition:transform .5s var(--pop) calc(var(--d,0s) + .25s)}
+.ticks li,.chips li,.faq,form>*,.about-tag,.work figcaption,.sec-head>*{transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.ticks li:nth-child(1){transition-delay:calc(var(--d,0s) + .25s)}
+.ticks li:nth-child(2){transition-delay:calc(var(--d,0s) + .35s)}
+.ticks li:nth-child(3){transition-delay:calc(var(--d,0s) + .45s)}
+.sec-head>:nth-child(2){transition-delay:.08s}
+.sec-head>:nth-child(3){transition-delay:.16s}
+.about-tag,.work figcaption{transition-delay:calc(var(--d,0s) + .4s)}
+.chips li{transition-timing-function:var(--pop)}
+.chips li:nth-child(2){transition-delay:.06s}.chips li:nth-child(3){transition-delay:.12s}.chips li:nth-child(4){transition-delay:.18s}
+.chips li:nth-child(5){transition-delay:.24s}.chips li:nth-child(6){transition-delay:.3s}.chips li:nth-child(7){transition-delay:.36s}.chips li:nth-child(8){transition-delay:.42s}
+.faq:nth-child(2),form>:nth-child(2){transition-delay:.08s}
+.faq:nth-child(3),form>:nth-child(3){transition-delay:.16s}
+.faq:nth-child(4),form>:nth-child(4){transition-delay:.24s}
+form>:nth-child(5){transition-delay:.32s}
+.faq::details-content{overflow:clip;block-size:0;transition:block-size .3s var(--ease),content-visibility .3s allow-discrete}
+.faq[open]::details-content{block-size:auto}
+.service:active,.why-card:active{transform:scale(.985)}
+.work:active img{transform:scale(1.05)}
+.why::before,.cta::before{content:"";position:absolute;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+.why::before{top:-120px;right:-140px;width:460px;height:460px;background:radial-gradient(circle,rgba(56,189,248,.24),transparent 68%)}
+.cta::before{bottom:-180px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(56,189,248,.5),transparent 68%)}
+.why .wrap,.cta .wrap{position:relative}
+@keyframes drift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-70px,60px,0)}}
+.cta .btn{position:relative}
+.cta .btn::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 2px var(--white);opacity:0;pointer-events:none}
+.cta .in .btn::after{animation:ring 2.6s ease-out .6s infinite}
+@keyframes ring{0%{opacity:.8;transform:scale(1)}70%,100%{opacity:0;transform:scale(1.14,1.34)}}
+@media (prefers-reduced-motion:no-preference){
+.js .from-l:not(.in){transform:translateX(-36px)}
+.js .from-r:not(.in){transform:translateX(36px)}
+.js .sec-head:not(.in)::after{transform:scaleX(0)}
+.js .sec-head:not(.in)>*{opacity:0;transform:translateY(14px)}
+.js .service:not(.in) .s-img{clip-path:inset(0 0 100% 0)}
+.js .service:not(.in) .s-img img{transform:scale(1.2)}
+.js .reveal:not(.in) .badge{transform:scale(.3) rotate(-14deg)}
+.js .reveal:not(.in) .ticks li{opacity:0;transform:translateX(-14px)}
+.js .about-pic:not(.in) img{clip-path:inset(0 100% 0 0 round var(--r))}
+.js .about-pic:not(.in) .about-tag{opacity:0;transform:translateY(18px)}
+.js .step:not(.in)::before{transform:scale(.3)}
+.js .step:not(.in)::after{transform:scaleY(0)}
+.js .work:not(.in) img{clip-path:inset(14% 14% 14% 14% round var(--r));transform:scale(1.2)}
+.js .work:not(.in) figcaption{opacity:0;transform:translateY(12px)}
+.js .chips:not(.in) li{opacity:0;transform:scale(.7)}
+.js .faq-list:not(.in) .faq{opacity:0;transform:translateY(16px)}
+.js form:not(.in)>*{opacity:0;transform:translateY(14px)}
+}
+@media (prefers-reduced-motion:no-preference) and (min-width:760px){
+.js .step:not(.in)::after{transform:scaleX(0)}
+}
+@media (prefers-reduced-motion:no-preference) and (max-width:979px){
+.hero-in{animation:rise .7s var(--ease) both}
 }
 @media (prefers-reduced-motion:reduce){
 html{scroll-behavior:auto}
@@ -303,8 +393,10 @@ html{scroll-behavior:auto}
       <a href="#contact">Contact</a>
     </nav>
     <a class="btn btn-call head-call" href="tel:+639000000000"><svg class="ico"><use href="#i-phone"/></svg>+63 900 000 0000</a>
+    <a class="head-tel" href="tel:+639000000000" aria-label="Call Santos Plumbing on +63 900 000 0000"><svg class="ico"><use href="#i-phone"/></svg></a>
     <button class="menu-btn" id="menu" type="button" aria-expanded="false" aria-controls="m-nav" aria-label="Open menu"><span></span></button>
   </div>
+  <span class="prog" id="prog" aria-hidden="true"></span>
   <div class="m-nav" id="m-nav">
     <div>
       <ul>
@@ -322,7 +414,7 @@ html{scroll-behavior:auto}
 <main id="main">
   <section class="hero">
     <img class="hero-img" src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1600&q=70"
-      srcset="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=800&q=60 800w, https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1600&q=70 1600w"
+      srcset="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=800&q=60 800w, https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1200&q=62 1200w, https://images.unsplash.com/photo-1676210134188-4c05dd172f89?auto=format&fit=crop&w=1600&q=70 1600w"
       sizes="100vw" width="1600" height="1067" alt="A plumber repairing the pipes under a sink" fetchpriority="high">
     <div class="wrap hero-in">
       <h1 class="up">Expert plumbers in <span>Cebu City</span></h1>
@@ -332,6 +424,11 @@ html{scroll-behavior:auto}
         <a class="btn btn-wa btn-big" href="https://wa.me/639000000000?text=Hi%20Santos%20Plumbing%2C%20I%20need%20a%20plumber."><svg class="ico ico-fill"><use href="#i-wa"/></svg>WhatsApp us</a>
       </div>
       <a class="hero-num up d3" href="tel:+639000000000">+63 900 000 0000</a>
+      <ul class="quick up d4" aria-label="Our services">
+        <li><a href="#services"><svg class="ico"><use href="#i-drop"/></svg>Leak repair</a></li>
+        <li><a href="#services"><svg class="ico"><use href="#i-swirl"/></svg>Drain cleaning</a></li>
+        <li><a href="#services"><svg class="ico"><use href="#i-heat"/></svg>Water heater</a></li>
+      </ul>
     </div>
     <svg class="wave" viewBox="0 0 1440 56" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M-60 30c120-22 240-22 360 0s240 22 360 0 240-22 360 0 240 22 360 0 240-22 360 0v40H-60z"/></svg>
   </section>
@@ -402,11 +499,11 @@ html{scroll-behavior:auto}
 
   <section class="sec about" id="about" aria-labelledby="about-title">
     <div class="wrap about-grid">
-      <div class="about-pic reveal">
+      <div class="about-pic reveal from-l">
         <img loading="lazy" width="800" height="800" alt="A plumber fitting pipes inside a sink cabinet" src="https://images.unsplash.com/photo-1676210133055-eab6ef033ce3?auto=format&fit=crop&w=800&h=800&q=65">
         <div class="about-tag"><svg class="ico"><use href="#i-wrench"/></svg>Plumbing is all we do</div>
       </div>
-      <div class="about-copy reveal" style="--d:.1s">
+      <div class="about-copy reveal from-r" style="--d:.1s">
         <span class="kicker">About Santos Plumbing</span>
         <h2 id="about-title">Your local plumber in Cebu City</h2>
         <p>A leak or a blocked drain can stop your whole day. Santos Plumbing keeps it simple: tell us the problem, we explain the fix, and we get your water working properly again.</p>
@@ -504,7 +601,7 @@ html{scroll-behavior:auto}
 
   <section class="sec contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap contact-grid">
-      <div class="c-info reveal">
+      <div class="c-info reveal from-l">
         <h2 id="contact-title">Tell us what needs fixing</h2>
         <p>Reach us directly, or fill in the form and send it on WhatsApp.</p>
         <ul class="c-list">
@@ -513,7 +610,7 @@ html{scroll-behavior:auto}
           <li><span><span class="badge"><svg class="ico"><use href="#i-pin"/></svg></span>Cebu City, Philippines</span></li>
         </ul>
       </div>
-      <form id="request" class="reveal" style="--d:.1s" novalidate>
+      <form id="request" class="reveal from-r" style="--d:.1s" novalidate>
         <label>Your name
           <input id="f-name" name="name" autocomplete="name" required aria-describedby="e-name">
           <span class="err" id="e-name"></span>
@@ -547,7 +644,7 @@ html{scroll-behavior:auto}
 
 <footer class="foot">
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="foot-grid reveal">
       <div>
         <a class="brand" href="#main"><span class="mark"><svg class="ico ico-fill"><use href="#i-drop"/></svg></span><span><b>Santos Plumbing</b><small>Cebu City</small></span></a>
         <p>Leak repair, drain cleaning and water heater service for homes and businesses.</p>
@@ -584,7 +681,12 @@ html{scroll-behavior:auto}
 <script>
 (function () {
   var head = document.getElementById("head");
-  var stick = function () { head.classList.toggle("stuck", window.scrollY > 30); };
+  var prog = document.getElementById("prog");
+  var stick = function () {
+    head.classList.toggle("stuck", window.scrollY > 30);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.transform = "scaleX(" + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ")";
+  };
   stick();
   window.addEventListener("scroll", stick, { passive: true });
 
@@ -598,11 +700,26 @@ html{scroll-behavior:auto}
   menu.addEventListener("click", function () { setMenu(!nav.classList.contains("open")); });
   nav.addEventListener("click", function (e) { if (e.target.tagName === "A") setMenu(false); });
 
+  var bar = document.querySelector(".bar");
+  var heroBtns = document.querySelector(".hero-btns");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      bar.classList.toggle("on", !entries[0].isIntersecting);
+    }, { rootMargin: "-64px 0px 0px 0px" }).observe(heroBtns);
+  } else {
+    bar.classList.add("on");
+  }
+
   var items = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) { entry.target.classList.add("in"); io.unobserve(entry.target); }
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          el.classList.add("in");
+          io.unobserve(el);
+          setTimeout(function () { el.classList.add("done"); }, 1600);
+        }
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
     items.forEach(function (el) { io.observe(el); });
